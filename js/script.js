@@ -108,3 +108,69 @@ window.addEventListener('keydown', e => {
     }
 }
 )
+
+document.getElementById("left").addEventListener("click", function () {
+    inputDir = { x: -1, y: 0 };
+});
+
+document.getElementById("up").addEventListener("click", function () {
+    inputDir = { x: 0, y: -1 };
+});
+
+document.getElementById("right").addEventListener("click", function () {
+    inputDir = { x: 1, y: 0 };
+});
+
+document.getElementById("down").addEventListener("click", function () {
+    inputDir = { x: 0, y: 1 };
+});
+
+document.getElementById("leftpc").addEventListener("click", function () {
+    inputDir = { x: -1, y: 0 };
+});
+
+document.getElementById("uppc").addEventListener("click", function () {
+    inputDir = { x: 0, y: -1 };
+});
+
+document.getElementById("rightpc").addEventListener("click", function () {
+    inputDir = { x: 1, y: 0 };
+});
+
+document.getElementById("downpc").addEventListener("click", function () {
+    inputDir = { x: 0, y: 1 };
+});
+
+// --------------------------------------------------------------------------------------
+// For responsiveness
+
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const body = document.querySelector('body');
+    const board = document.querySelector('#board');
+    const keyboard = document.querySelector('.keyboard-buttons');
+    const keyboardonmobile = document.querySelector('.keyboard-buttons-on-mobile');
+
+    function updateStyles() {
+        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        if (height < width) {
+            // for pc
+            body.style.alignItems = 'center';
+            board.style.marginTop = '';
+            keyboard.style.display = 'flex';
+            keyboardonmobile.style.display = 'none';
+        } else {
+            // for mobile
+            body.style.alignItems = '';
+            board.style.marginTop = '60px';
+            keyboard.style.display = 'none';
+            keyboardonmobile.style.display = 'flex';
+        }
+    }
+
+    updateStyles();
+
+    window.addEventListener('resize', updateStyles);
+});

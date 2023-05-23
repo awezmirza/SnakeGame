@@ -5,7 +5,7 @@
 
 body {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(1, 27, 0, 1) 50%, rgba(17, 17, 17, 1) 100%);
     overflow: hidden;
@@ -13,7 +13,7 @@ body {
 }
 
 #board {
-    /* border: 2px solid white; */
+    /* margin-top: 60px; */
     width: 80vmin;
     height: 80vmin;
     display: grid;
@@ -21,7 +21,6 @@ body {
     grid-template-rows: repeat(18, 1fr);
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 20px 8px;
     border-radius: 5px;
-
 }
 
 .snakehead {
@@ -72,22 +71,12 @@ body {
 }
 
 #ScoreValue {
-    /* position: absolute; */
     color: aliceblue;
-    /* left: 10px; */
-    /* top: 10px; */
-    /* border: 1px solid white; */
-    /* padding: 5px; */
     width: auto;
 }
 
 #HighScoreValue {
-    /* position: absolute; */
     color: aliceblue;
-    /* left: 10px; */
-    /* top: 10px; */
-    /* border: 1px solid white; */
-    /* padding: 5px; */
     width: auto;
 }
 
@@ -112,6 +101,17 @@ body {
     font-size: 20px;
 }
 
+.hover:hover {
+    background-color: rgba(0, 0, 0, 0.463);
+    cursor: pointer;
+}
+
+.hover:active{
+    background-color: rgba(0, 0, 0, 0.463);
+    cursor: pointer;
+    transform: translateY(2px);
+}
+
 .up {
     border-radius: 50% 50% 0 0;
 }
@@ -126,4 +126,45 @@ body {
 
 .right {
     border-radius: 0 50% 50% 0;
+}
+
+
+.keyboard-buttons-on-mobile {
+    bottom: 110px;
+    position: absolute;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard-buttonmob {    
+    text-align: center;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid white;
+    font-size: 50px;
+}
+
+#up{
+    position: absolute;
+    bottom: 55px;
+}
+
+#down{
+    position: absolute;
+    top: 55px;
+}
+
+#left{
+    position: absolute; 
+    right: 55px;  
+}
+
+#right{
+    position: absolute;
+    left: 55px;
 }

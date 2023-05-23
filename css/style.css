@@ -21,7 +21,7 @@ body {
     grid-template-rows: repeat(18, 1fr);
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 20px 8px;
     border-radius: 5px;
-    
+
 }
 
 .snakehead {
@@ -50,7 +50,8 @@ body {
     /* position: relative; */
     /* overflow: hidden; */
 }
-.Score{
+
+.Score {
     position: absolute;
     color: aliceblue;
     left: 10px;
@@ -60,7 +61,7 @@ body {
     width: auto;
 }
 
-.HighScore{
+.HighScore {
     position: absolute;
     color: aliceblue;
     right: 10px;
@@ -70,7 +71,7 @@ body {
     width: auto;
 }
 
-#ScoreValue{
+#ScoreValue {
     /* position: absolute; */
     color: aliceblue;
     /* left: 10px; */
@@ -80,7 +81,7 @@ body {
     width: auto;
 }
 
-#HighScoreValue{
+#HighScoreValue {
     /* position: absolute; */
     color: aliceblue;
     /* left: 10px; */
@@ -90,7 +91,39 @@ body {
     width: auto;
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
 
+.keyboard-buttons {
+    /* left: 10px; */
+    bottom: 10px;
+    position: absolute;
+    display: flex;
+    color: white;
+    font-size: 24px;
+    align-items: center;
+}
 
+.keyboard-button {
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    font-size: 20px;
+}
 
+.up {
+    border-radius: 50% 50% 0 0;
+}
 
+.down {
+    border-radius: 0 0 50% 50%;
+}
+
+.left {
+    border-radius: 50% 0 0 50%;
+}
+
+.right {
+    border-radius: 0 50% 50% 0;
+}

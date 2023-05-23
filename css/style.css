@@ -5,7 +5,6 @@
 
 body {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     background: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(1, 27, 0, 1) 50%, rgba(17, 17, 17, 1) 100%);
     overflow: hidden;
@@ -13,7 +12,6 @@ body {
 }
 
 #board {
-    /* margin-top: 60px; */
     width: 80vmin;
     height: 80vmin;
     display: grid;
@@ -39,15 +37,8 @@ body {
 }
 
 .food {
-    /* width: 200px; */
-    /* height: 200px; */
     background: linear-gradient(red, rgb(255, 86, 86));
-    /* box-shadow: inset red 0px 0px 10px 4px; */
-    /* border: px solid black; */
     border-radius: 30%;
-    /* background: radial-gradient(circle at 80px 80px, #ff0000, #800000); */
-    /* position: relative; */
-    /* overflow: hidden; */
 }
 
 .Score {
@@ -55,9 +46,12 @@ body {
     color: aliceblue;
     left: 10px;
     top: 10px;
-    border: 1px solid white;
-    padding: 5px;
+    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
+    /* border: 1px solid white; */
+    padding-inline: 10px;
+    padding-block: 5px;
     width: auto;
+    border-radius: 5px;
 }
 
 .HighScore {
@@ -65,9 +59,12 @@ body {
     color: aliceblue;
     right: 10px;
     top: 10px;
-    border: 1px solid white;
-    padding: 5px;
+    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
+    /* border: 1px solid white; */
+    padding-inline: 10px;
+    padding-block: 5px;
     width: auto;
+    border-radius: 5px;
 }
 
 #ScoreValue {
@@ -97,7 +94,8 @@ body {
     line-height: 30px;
     width: 30px;
     height: 30px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
     font-size: 20px;
 }
 
@@ -106,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-.hover:active{
+.hover:active {
     background-color: rgba(0, 0, 0, 0.463);
     cursor: pointer;
     transform: translateY(2px);
@@ -135,36 +133,38 @@ body {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
     color: white;
+
     font-size: 24px;
     align-items: center;
     justify-content: center;
 }
 
-.keyboard-buttonmob {    
+.keyboard-buttonmob {
     text-align: center;
     line-height: 70px;
     width: 70px;
     height: 70px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     font-size: 50px;
+    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 10px 3px;
 }
 
-#up{
+#up {
     position: absolute;
     bottom: 55px;
 }
 
-#down{
+#down {
     position: absolute;
     top: 55px;
 }
 
-#left{
-    position: absolute; 
-    right: 55px;  
+#left {
+    position: absolute;
+    right: 55px;
 }
 
-#right{
+#right {
     position: absolute;
     left: 55px;
 }

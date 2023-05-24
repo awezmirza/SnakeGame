@@ -85,29 +85,18 @@ function gameEngine() {
 }
 
 window.requestAnimationFrame(main);
-window.addEventListener('keydown', e => {
-    inputDir = { x: 0, y: 0 }
-    switch (e.key) {
-        case "ArrowUp":
-            // console.log("Arrow Up")
-            inputDir = { x: 0, y: -1 }
-            break;
-        case "ArrowDown":
-            // console.log("Arrow Down")
-            inputDir = { x: 0, y: 1 }
-            break;
-        case "ArrowRight":
-            // console.log("Arrow Right")
-            inputDir = { x: 1, y: 0 }
-            break;
-        case "ArrowLeft":
-            // console.log("Arrow Left")
-            inputDir = { x: -1, y: 0 }
-            break;
-        default: break;
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowUp') {
+        document.getElementById('uppc').click();
+    } else if (event.key === 'ArrowDown') {
+        document.getElementById('downpc').click();
+    } else if (event.key === 'ArrowLeft') {
+        document.getElementById('leftpc').click();
+    } else if (event.key === 'ArrowRight') {
+        document.getElementById('rightpc').click();
     }
-}
-)
+});
 
 document.getElementById("left").addEventListener("click", function () {
     inputDir = { x: -1, y: 0 };
@@ -161,7 +150,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             board.style.marginTop = '';
             keyboard.style.display = 'flex';
             keyboardonmobile.style.display = 'none';
-            // body.style.justify-content = 'center';
         } else {
             // for mobile
             body.style.alignItems = '';

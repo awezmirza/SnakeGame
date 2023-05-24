@@ -47,7 +47,6 @@ body {
     left: 10px;
     top: 10px;
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
-    /* border: 1px solid white; */
     padding-inline: 10px;
     padding-block: 5px;
     width: auto;
@@ -60,7 +59,6 @@ body {
     right: 10px;
     top: 10px;
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
-    /* border: 1px solid white; */
     padding-inline: 10px;
     padding-block: 5px;
     width: auto;
@@ -80,7 +78,6 @@ body {
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
 
 .keyboard-buttons {
-    /* left: 10px; */
     bottom: 10px;
     position: absolute;
     display: flex;
@@ -94,7 +91,6 @@ body {
     line-height: 30px;
     width: 30px;
     height: 30px;
-    /* border: 1px solid white; */
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
     font-size: 20px;
 }

@@ -14,7 +14,6 @@ const highscoresnd = new Audio("assets/sounds/highscore.mp3")
 let highscore = localStorage.getItem("highscore")
 if (highscore === null) { highscore = 0; }
 
-
 function main(ctime) {
     window.requestAnimationFrame(main);
     if ((ctime - lastPaintTime) / 1000 < 1 / speed) { return; }
@@ -195,6 +194,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 /////////////////////////////////////////////////////////////////////////
 
 
+function simulateClick(element) {
+    const event = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+    });
+    element.dispatchEvent(event);
+}
+
+let volume = localStorage.getItem("volume");
+
 // Get the volume element
 const volumeElement = document.getElementById('volume');
 
@@ -208,8 +218,14 @@ volumeElement.addEventListener('click', function () {
     if (volumeOnElement.style.display === 'none') {
         volumeOnElement.style.display = 'inline';
         volumeOffElement.style.display = 'none';
+        localStorage.setItem("volume", true);
     } else {
         volumeOnElement.style.display = 'none';
         volumeOffElement.style.display = 'inline';
+        localStorage.setItem("volume", false);
     }
 });
+
+if (volume === 'false') {
+    simulateClick(volumeElement);
+}

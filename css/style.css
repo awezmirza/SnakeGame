@@ -46,7 +46,7 @@ body {
     color: aliceblue;
     left: 10px;
     top: 10px;
-    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
+    border: 1px solid white;
     padding-inline: 10px;
     padding-block: 5px;
     width: auto;
@@ -58,7 +58,8 @@ body {
     color: aliceblue;
     right: 10px;
     top: 10px;
-    box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px;
+    border: 1px solid white;
+    /* box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 8px 1px; */
     padding-inline: 10px;
     padding-block: 5px;
     width: auto;
@@ -128,7 +129,6 @@ body {
     position: absolute;
     display: flex;
     color: white;
-
     font-size: 24px;
     align-items: center;
     justify-content: center;
@@ -161,4 +161,16 @@ body {
 #right {
     position: absolute;
     left: 40px;
+}
+
+#volume {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    filter: invert();
+    cursor: pointer;
+}
+
+#volumeoff {
+    display: none;
 }

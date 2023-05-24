@@ -4,6 +4,12 @@ let snakeArr = [{ x: 9, y: 9 }];
 let speed = 8;
 let lastPaintTime = 0;
 let score = 0;
+let highscorecrossed = false;
+
+const foodeat = new Audio("assets/sounds/foodeat.wav")
+const gameover = new Audio("assets/sounds/gameover.wav")
+const movesnd = new Audio("assets/sounds/movesnd.mp3")
+const highscoresnd = new Audio("assets/sounds/highscore.mp3")
 
 let highscore = localStorage.getItem("highscore")
 if (highscore === null) { highscore = 0; }
@@ -27,11 +33,18 @@ function isCollide(snake) {
     }
 }
 
+function playAudio(audio) {
+    if (volumeOnElement.style.display !== 'none') {
+        audio.play();
+    }
+}
+
 function gameEngine() {
     document.getElementById("ScoreValue").textContent = score;
     document.getElementById("HighScoreValue").textContent = highscore;
 
     if (isCollide(snakeArr)) {
+        playAudio(gameover);
         inputDir = { x: 0, y: 0 }
 
         if (score == highscore) {
@@ -39,6 +52,7 @@ function gameEngine() {
             localStorage.setItem("highscore", highscore)
         }
         score = 0;
+        highscorecrossed = false;
         alert("Game Over")
 
         snakeArr = [
@@ -52,7 +66,13 @@ function gameEngine() {
         score += 1;
         if (score > highscore) {
             highscore = score;
+            if (highscorecrossed == false) {
+                playAudio(highscoresnd);
+                highscorecrossed = true;
+            }
         }
+        playAudio(foodeat);
+
         speed += 0.3
         food = { x: Math.round(2 + (14) * Math.random()), y: Math.round(2 + (14) * Math.random()) }
     }
@@ -99,34 +119,42 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.getElementById("left").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: -1, y: 0 };
 });
 
 document.getElementById("up").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 0, y: -1 };
 });
 
 document.getElementById("right").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 1, y: 0 };
 });
 
 document.getElementById("down").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 0, y: 1 };
 });
 
 document.getElementById("leftpc").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: -1, y: 0 };
 });
 
 document.getElementById("uppc").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 0, y: -1 };
 });
 
 document.getElementById("rightpc").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 1, y: 0 };
 });
 
 document.getElementById("downpc").addEventListener("click", function () {
+    playAudio(movesnd);
     inputDir = { x: 0, y: 1 };
 });
 
@@ -162,4 +190,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     updateStyles();
 
     window.addEventListener('resize', updateStyles);
+});
+
+/////////////////////////////////////////////////////////////////////////
+
+
+// Get the volume element
+const volumeElement = document.getElementById('volume');
+
+// Get the volumeon and volumeoff elements
+const volumeOnElement = document.getElementById('volumeon');
+const volumeOffElement = document.getElementById('volumeoff');
+
+// Add a click event listener to the volume element
+volumeElement.addEventListener('click', function () {
+    // Toggle the visibility of the volumeon and volumeoff elements
+    if (volumeOnElement.style.display === 'none') {
+        volumeOnElement.style.display = 'inline';
+        volumeOffElement.style.display = 'none';
+    } else {
+        volumeOnElement.style.display = 'none';
+        volumeOffElement.style.display = 'inline';
+    }
 });

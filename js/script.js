@@ -193,17 +193,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 /////////////////////////////////////////////////////////////////////////
 
-
-function simulateClick(element) {
-    const event = new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-        view: window
-    });
-    element.dispatchEvent(event);
-}
-
-let volume = localStorage.getItem("volume");
+let volumepreference = localStorage.getItem("volumepreference");
 
 // Get the volume element
 const volumeElement = document.getElementById('volume');
@@ -218,14 +208,14 @@ volumeElement.addEventListener('click', function () {
     if (volumeOnElement.style.display === 'none') {
         volumeOnElement.style.display = 'inline';
         volumeOffElement.style.display = 'none';
-        localStorage.setItem("volume", true);
+        localStorage.setItem("volumepreference", true);
     } else {
         volumeOnElement.style.display = 'none';
         volumeOffElement.style.display = 'inline';
-        localStorage.setItem("volume", false);
+        localStorage.setItem("volumepreference", false);
     }
 });
 
-if (volume === 'false') {
-    simulateClick(volumeElement);
+if (volumepreference === 'false') {
+    volumeElement.click();
 }

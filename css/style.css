@@ -131,7 +131,6 @@ body {
     bottom: 110px;
     position: absolute;
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
     color: white;
 
     font-size: 24px;
@@ -144,27 +143,26 @@ body {
     line-height: 70px;
     width: 70px;
     height: 70px;
-    /* border: 1px solid white; */
     font-size: 50px;
     box-shadow: rgba(252, 29, 59, 0.5) 0px 0px 10px 3px;
 }
 
 #up {
     position: absolute;
-    bottom: 55px;
+    bottom: 40px;
 }
 
 #down {
     position: absolute;
-    top: 55px;
+    top: 40px;
 }
 
 #left {
     position: absolute;
-    right: 55px;
+    right: 40px;
 }
 
 #right {
     position: absolute;
-    left: 55px;
+    left: 40px;
 }

@@ -161,6 +161,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             board.style.marginTop = '';
             keyboard.style.display = 'flex';
             keyboardonmobile.style.display = 'none';
+            // body.style.justify-content = 'center';
         } else {
             // for mobile
             body.style.alignItems = '';

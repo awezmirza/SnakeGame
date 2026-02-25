@@ -1,7 +1,7 @@
 let inputDir = { x: 0, y: 0 };
 let food = { x: 10, y: 13 }
 let snakeArr = [{ x: 9, y: 9 }];
-let speed = 8;
+let speed = 4;
 let lastPaintTime = 0;
 let score = 0;
 let highscorecrossed = false;
